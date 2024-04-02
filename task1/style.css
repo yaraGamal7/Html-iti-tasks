@@ -1,0 +1,92 @@
+#main{
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 100px auto;
+    width:  70%;
+    height: 600px;
+    border: 3px solid rgb(245, 245, 141);
+    box-shadow:rgb(245, 1, 172) 20px 20px 70px ,rgb(0, 252, 193) 20px 20px 100px inset ;
+}
+#main:hover{
+    
+    transform: rotate(-5deg) ;
+    box-shadow:rgb(1, 229, 245) 20px 20px 50px ,rgb(0, 252, 193) 20px 20px 100px inset ;
+    transition: box-shadow 5s, transform 5s;
+}
+#main:active {
+	transform: scale(0.5);
+}
+
+#article{
+    width: 35%;
+    height: 95%;
+    border-radius: 20px;
+    border: 4px solid black;
+    margin: 10px;
+    box-shadow: yellow 20px 20px 150px inset;
+padding: 5px;
+    overflow:auto ;
+    column-count: 3;
+    column-rule: 2px solid red;
+    column-gap: 10px;
+    transition: all 2s;
+    
+}
+
+
+#article:hover{text-decoration: underline;}
+
+
+
+mark{transition: all 2s;}
+mark:hover{
+    background-color: red;
+}
+
+mark:active {
+	background-color: rgb(30, 139, 72);
+}
+@media all and (orientation:portrait){
+    
+    mark{background-color: blue;}
+   
+}
+
+img {
+	width: 100px;
+	height: 100px;
+	margin: 7px;
+	border: 3px solid black;
+	box-shadow: 5px 5px 8px rgb(232, 0, 163);
+	transition: all 2s;
+}
+
+img:hover {
+	transform: scale(1.3);
+	box-shadow: 5px 5px 8px rgb(243, 219, 3);
+}
+
+img:active {
+	transform: scale(2.5);
+}
+
+@media all and (orientation:portrait){
+    img{
+        transform: rotate(45deg);
+    border: 3px dashed blue;
+    }
+}
+#pictures{
+    width:  60%;
+    height:95%; 
+    background-image: radial-gradient(rgba(250, 250, 250) 50%, rgb(66, 246, 231));
+	border: 3px solid rgb(4, 12, 234);
+	border-radius: 20px;
+	overflow: auto;
+	padding: 5px;
+    margin: 10px;
+    display: inline-block;
+    
+}

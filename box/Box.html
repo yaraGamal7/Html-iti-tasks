@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @keyframes shapeanimation {
+            25% {
+                left: 200px;
+                top:0;
+                background-color: green;
+            }
+            50% {
+                top: 200px;
+                left:200px;
+                background-color: blue;
+            }
+            75% {
+                top: 200px;
+                left:0px;
+                background-color: yellow;
+            }
+            100% {
+                left: 0;
+                top:0;
+                background-color: red;
+            }
+        }
+        @keyframes shapestopped{
+            to{
+                left:0 ;
+                top:0;
+            }
+        }
+        .shape:hover{
+    transform: scale(1.2);
+    transition: scale 4s;
+    animation-play-state: paused;
+        }
+        .stop {
+            animation-name: shapestopped;
+            animation-play-state: paused;
+            }
+
+        div.container {
+            width: 70%;
+            margin: 40px auto;
+            text-align: center;
+            position: relative;
+            border: 2px solid  black;
+        }
+        div.shape {
+            left: 0;
+            top: 0;
+            background-color: red;
+            width: 100px;
+            height: 40px;
+            position: absolute;
+        }
+        .move {
+            animation-name: shapeanimation;
+            animation-duration: 20s;
+            animation-direction: alternate;
+        }
+        input {
+            background-color: rgb(69, 199, 134);
+            padding: 10px;
+            color: white;
+            margin: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="button" value="start">
+        <input type="button" value="pause">
+        <input type="button" value="stop">
+        <div class="shape"></div>
+    </div>
+    <script>
+        let start = document.querySelector("input[value='start']");
+        let pause=document.querySelector("input[value='pause']");
+        let stop = document.querySelector("input[value='stop']");
+        let shape = document.querySelector("div.shape");
+    start.addEventListener("click", function() {
+        shape.classList.remove("stop"); 
+        shape.classList.add("move"); 
+    });
+
+    stop.addEventListener("click", function() {
+        if (shape.classList.contains("move")) {
+            shape.classList.remove("move");
+            shape.classList.add("stop") 
+        }
+    });
+
+    pause.addEventListener("click", function() { 
+        if (shape.style.animationPlayState === "running") {
+            shape.style.animationPlayState = "paused";
+            pause.value="continue"
+            console.log(shape.offsetx)
+        } else {
+            shape.style.animationPlayState = "running";
+            pause.value="pause"
+        }
+    });
+
+    </script>
+</body>
+</html>

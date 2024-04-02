@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* @-o-keyframes shapeanmiation{
+    0%{
+        left:40px;
+    }
+    33%{
+        top:40px ;
+    }
+    67%{
+        left:0
+    }
+    100%{
+        top:0
+    }
+} */
+div.container{
+    width: 70%;
+    margin: 40px auto;
+    text-align: center;
+    position: relative;
+}
+div.shape{
+    background-color: red;
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.move{
+    animation-name: shapeanmiation;
+    animation-duration: 5s;
+}
+input{
+    background-color: rgb(0, 191, 255);
+    padding: 10px;
+    color:white;
+    margin: 20px;
+    cursor: pointer;
+}
